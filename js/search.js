@@ -2493,33 +2493,37 @@ function searchPostcode() {
 			"%) of your local area's population were non-UK dwellers.</p>"
 		].join('');
 	} else {
-		var percent2001 = ((nonuk2001/total2001) * 100).toFixed(1);
-
-		var change_percent = (percent2015 - percent2001).toFixed(1);
-		if (change_percent > 0) {
-			var increase_or_descrease = "an increase";
-		} else {
-			var increase_or_descrease = "a descrease";
-		}
-
-		var content = [
-			"<p>Your local area is ",
-			area,
-			".</p><p>In 2001, ",
-			nonuk2001,
-			",000 out of ",
-			total2001,
-			",000 (",
-			percent2001,
-			,"%) of your local area's population were non-UK dwellers.</p><p>In 2015, there was
-			",000 out of ",
-			total2015,
-			",000 (",
-			percent2015,
-			"%) of your local area's population.</p>",
-			
-		].join('');
-	}
-
-	$('#stats').html(content);
-}
+        var percent2001 = ((nonuk2001/total2001) * 100).toFixed(1);
+ 
+        var change_percent = (percent2015 - percent2001).toFixed(1);
+        if (change_percent > 0) {
+            var increase_or_descrease = "an increase";
+        } else {
+            var increase_or_descrease = "a descrease";
+        }
+ 
+        var content = [
+            "<p>Your local area is ",
+            area,
+            ".</p><p>In 2001, ",
+            nonuk2001,
+            ",000 out of ",
+            total2001,
+            ",000 (",
+            percent2001,
+            ,"%) of your local area's population were non-UK dwellers.</p><p>In 2015, there was ",
+            increase_or_descrease,
+            " of ",
+            change_percent,
+            "% making the number of non-UK dwellers ",
+            nonuk2015,
+            ",000 out of ",
+            total2015,
+            ",000 (",
+            percent2015,
+            "%) of your local area's population.</p>",
+             
+        ].join('');
+    }
+ 
+    $('#stats').html(content);
