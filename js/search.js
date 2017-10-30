@@ -2467,39 +2467,39 @@ var stats = {
 }
 
 function searchPostcode() {
-	var postcode = $("#postcode").val();
-
-	var area = postcodes[postcode];
-	var details = stats[area];
-
-	var nonuk2001 = details[2001]["nonuk"];
-	var nonuk2015 = details[2015]["nonuk"];
-
-	var total2001 = details[2001]["total"];
-	var total2015 = details[2015]["total"];
-
-	var percent2015 = ((nonuk2015/total2015) * 100).toFixed(1);
-
-	if (nonuk2001 == "N/A") {
-		var content = [
-			"<p>Your local area is ",
-			area,
-			".</p><p>In 2015, ",
-			nonuk2015,
-			" thousand out of ",
-			total2015,
-			" thousand (",
-			percent2015,
-			"%) of your local area's population were non-UK dwellers.</p>"
-		].join('');
-	} else {
+    var postcode = $("#postcode").val();
+ 
+    var area = postcodes[postcode];
+    var details = stats[area];
+ 
+    var nonuk2001 = details[2001]["nonuk"];
+    var nonuk2015 = details[2015]["nonuk"];
+ 
+    var total2001 = details[2001]["total"];
+    var total2015 = details[2015]["total"];
+ 
+    var percent2015 = ((nonuk2015/total2015) * 100).toFixed(1);
+ 
+    if (nonuk2001 == "N/A") {
+        var content = [
+            "<p>Your local area is ",
+            area,
+            ".</p><p>In 2015, ",
+            nonuk2015,
+            ",000 out of ",
+            total2015,
+            ",000 (",
+            percent2015,
+            "%) of your local area's population were non-UK dwellers.</p>"
+        ].join('');
+    } else {
         var percent2001 = ((nonuk2001/total2001) * 100).toFixed(1);
  
         var change_percent = (percent2015 - percent2001).toFixed(1);
         if (change_percent > 0) {
             var increase_or_descrease = "an increase";
         } else {
-            var increase_or_descrease = "a descrease";
+            var increase_or_descrease = "a decrease";
         }
  
         var content = [
@@ -2527,3 +2527,4 @@ function searchPostcode() {
     }
  
     $('#stats').html(content);
+}
