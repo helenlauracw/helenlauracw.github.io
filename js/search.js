@@ -2486,9 +2486,9 @@ function searchPostcode() {
             area,
             ".</p><p>In 2015, ",
             nonuk2015,
-            ",000 out of ",
+            " thousand out of ",
             total2015,
-            ",000 (",
+            " thousand (",
             percent2015,
             "%) of your local area's population were non-UK dwellers.</p>"
         ].join('');
@@ -2499,7 +2499,7 @@ function searchPostcode() {
         if (change_percent > 0) {
             var increase_or_descrease = "an increase";
         } else {
-            var increase_or_descrease = "a decrease";
+            var increase_or_descrease = "a descrease";
         }
  
         var content = [
@@ -2507,9 +2507,9 @@ function searchPostcode() {
             area,
             ".</p><p>In 2001, ",
             nonuk2001,
-            ",000 out of ",
+            " thousand out of ",
             total2001,
-            ",000 (",
+            " thousand (",
             percent2001,
             ,"%) of your local area's population were non-UK dwellers.</p><p>In 2015, there was ",
             increase_or_descrease,
@@ -2517,9 +2517,9 @@ function searchPostcode() {
             change_percent,
             "% making the number of non-UK dwellers ",
             nonuk2015,
-            ",000 out of ",
+            " thousand out of ",
             total2015,
-            ",000 (",
+            " thousand (",
             percent2015,
             "%) of your local area's population.</p>",
              
